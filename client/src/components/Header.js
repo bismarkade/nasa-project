@@ -1,10 +1,4 @@
-import { 
-  Logo,
-  Words,
-  Header as ArwesHeader,
-  Highlight,
-  withStyles,
-} from "arwes";
+import { Logo, Words, Header as ArwesHeader, Highlight, withStyles, } from "arwes";
 import { Link } from "react-router-dom";
 import Clickable from "./Clickable";
 import Centered from "./Centered";

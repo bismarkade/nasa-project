@@ -13,12 +13,7 @@ const styles = () => ({
 });
 
 const Centered = props => {
-  const {
-    classes,
-    className,
-    children,
-    ...rest
-  } = props;
+  const { classes, className,children, ...rest } = props;
   return (
     <div className={`${classes.root} ${className}`} {...rest}>
       {children}
