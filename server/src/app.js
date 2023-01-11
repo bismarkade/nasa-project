@@ -1,6 +1,7 @@
 const path = require('path');
 const express = require('express');
 const cors = require('cors');
+const morgan = require('morgan');
 
 const planetsRouter = require('./routes/planets/planets.router');
 const app = express();
@@ -10,6 +11,9 @@ app.use(cors({
     origin: 'http://localhost:3000',
 }))
 
+// add morgan Middleware: for logging
+app.use(morgan('combined'))
+
 // middleware: It parses incoming requests with JSON payloads
 app.use(express.json());
 
@@ -18,6 +22,7 @@ app.use(express.static(path.join(__dirname, '..', 'public')))
 
 // Planets Router
 app.use(planetsRouter);
+
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '..', 'public', 'index.html'))
 });
