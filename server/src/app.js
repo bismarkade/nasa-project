@@ -22,8 +22,8 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, '..', 'public')))
 
 // Planets Router
-app.use(planetsRouter);
-app.use(launchesRouter);
+app.use('/planets', planetsRouter);
+app.use('/launches', launchesRouter);
 
 // the * matches everthing which is not above --> then parses to ..
 // particularly for the client side routing for react
