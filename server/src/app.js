@@ -25,7 +25,9 @@ app.use(express.static(path.join(__dirname, '..', 'public')))
 app.use(planetsRouter);
 app.use(launchesRouter);
 
-app.get('/', (req, res) => {
+// the * matches everthing which is not above --> then parses to ..
+// particularly for the client side routing for react
+app.get('/*', (req, res) => {
     res.sendFile(path.join(__dirname, '..', 'public', 'index.html'))
 });
 
