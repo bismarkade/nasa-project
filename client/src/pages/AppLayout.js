@@ -43,12 +43,7 @@ const AppLayout = props => {
   const onAbortSound = () => sounds.abort && sounds.abort.play();
   const onFailureSound = () => sounds.warning && sounds.warning.play();
 
-  const {
-    launches,
-    isPendingLaunch,
-    submitLaunch,
-    abortLaunch,
-  } = useLaunches(onSuccessSound, onAbortSound, onFailureSound);
+  const {launches, isPendingLaunch,  submitLaunch, abortLaunch} = useLaunches(onSuccessSound, onAbortSound, onFailureSound);
 
   const planets = usePlanets();
   
